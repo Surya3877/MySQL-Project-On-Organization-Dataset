@@ -219,7 +219,7 @@ FROM
             ROW_NUMBER() OVER (ORDER BY Worker_Id) as row_num
 		FROM
             Worker
-	) as temp
+    ) as temp
 WHERE
     row_num % 2 = 1;
     
@@ -240,7 +240,7 @@ FROM
 		    ROW_NUMBER() OVER(ORDER BY Worker_id) as even_row
 		FROM
             Worker
-	) as temp
+    ) as temp
 WHERE
     even_row % 2 = 0;
     
@@ -305,7 +305,7 @@ FROM
             DENSE_RANK() OVER (ORDER BY Salary DESC) as denrnk
 		FROM
             Worker
-	) as Salary_rank
+    ) as Salary_rank
 WHERE
    denrnk = 5; 
    
@@ -383,7 +383,7 @@ WHERE
             count(*) / 2
 		FROM
             worker
-	);
+    );
     
 # Q-40. Write An SQL Query To Fetch The Departments That Have Less Than Five People In It. 
 SELECT
@@ -601,7 +601,7 @@ WHERE
             max(Salary)
 		FROM
             Worker
-	);
+    );
     
 -- Alternative Approach Using DENSE_RANK()
 WITH Ranked_Salaries as (
